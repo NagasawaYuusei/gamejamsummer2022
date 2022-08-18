@@ -1,49 +1,83 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-// "NavMeshAgent"関連クラスを使用できるようにする
+//NavMeshAgent使うときに必要
 using UnityEngine.AI;
 
-public class EnemyNavMesh : MonoBehaviour
-{
-    // 巡回地点オブジェクトを格納する配列
-    public Transform[] points;
-    // 巡回地点のオブジェクト数（初期値=0）
-    private int destPoint = 0;
-    // NavMesh Agent コンポーネントを格納する変数
-    private NavMeshAgent agent;
+//オブジェクトにNavMeshAgentコンポーネントを設置
+[RequireComponent(typeof(NavMeshAgent))]
 
-    // ゲームスタート時の処理
+public class EnemyNavMesh: MonoBehaviour
+{
+    //位置の基準になるオブジェクトのTransformを収める
+    //public Transform central;
+    [SerializeField] Vector3 central;
+
+    private NavMeshAgent agent;
+    //ランダムで決める数値の最大値
+    [SerializeField] float radius = 3;
+    //設定した待機時間
+    [SerializeField] float waitTime = 2;
+    //待機時間を数える
+    [SerializeField] float time = 0;
+
+    Animator anim;
+
+    //Vector3 pos;
+
     void Start()
     {
-        // 変数"agent"に NavMesh Agent コンポーネントを格納
         agent = GetComponent<NavMeshAgent>();
-        // 巡回地点間の移動を継続させるために自動ブレーキを無効化
-        //（エージェントは目的地点に近づいても減速しない)
+
+        //anim = GetComponent<Animator>();
+
+        //目標地点に近づいても速度を落とさなくなる
         agent.autoBraking = false;
-        // 次の巡回地点の処理を実行
+        //目標地点を決める
         GotoNextPoint();
     }
-
-    // 次の巡回地点を設定する処理
     void GotoNextPoint()
     {
-        // 巡回地点が設定されていなければ
-        if (points.Length == 0)
-            // 処理を返します
-            return;
-        // 現在選択されている配列の座標を巡回地点の座標に代入
-        agent.destination = points[destPoint].position;
-        // 配列の中から次の巡回地点を選択（必要に応じて繰り返し）
-        destPoint = (destPoint + 1) % points.Length;
+        //NavMeshAgentのストップを解除
+        agent.isStopped = false;
+
+        //目標地点のX軸、Z軸をランダムで決める
+        float posX = Random.Range(-1 * radius, radius);
+        float posZ = Random.Range(-1 * radius, radius);
+
+        //CentralPointの位置にPosXとPosZを足す
+        Vector3 pos = central;
+        pos.x += posX;
+        pos.z += posZ;
+
+        //NavMeshAgentに目標地点を設定する
+        agent.destination = pos;
     }
 
-    // ゲーム実行中の繰り返し処理
+    void StopHere()
+    {
+        //NavMeshAgentを止める
+        agent.isStopped = true;
+        //待ち時間を数える
+        time += Time.deltaTime;
+
+        //待ち時間が設定された数値を超えると発動
+        if (time > waitTime)
+        {
+            //目標地点を設定し直す
+            GotoNextPoint();
+            time = 0;
+        }
+    }
+
     void Update()
     {
-        // エージェントが現在の巡回地点に到達したら
+        //経路探索の準備ができておらず
+        //目標地点までの距離が0.5m未満ならNavMeshAgentを止める
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
-            // 次の巡回地点を設定する処理を実行
-            GotoNextPoint();
+            StopHere();
+
+        //NavMeshAgentのスピードの2乗でアニメーションを切り替える
+        //anim.SetFloat("Blend", agent.velocity.sqrMagnitude);
     }
 }
