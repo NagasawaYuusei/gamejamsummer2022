@@ -15,16 +15,16 @@ public class EnemyGenerator1 : MonoBehaviour
 
     bool spawning = false;
 
-    GameObject player;
+    //GameObject player;
     float _timer = 0.0f;
-    [SerializeField] float _cRad = 0.0f;
-    [SerializeField] int _pos = 30;
+    //[SerializeField] float _cRad = 0.0f;
+    //[SerializeField] int _pos = 30;
     [SerializeField] Transform _popPos;
     ObjectPool<Enemy> _enemyPool = new ObjectPool<Enemy>();
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        //player = GameObject.FindGameObjectWithTag("Player");
         var x = Random.Range(0, _prefab.Length );
 
         _enemyPool.SetBaseObj(_prefab[x], _root);
