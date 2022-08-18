@@ -9,8 +9,10 @@ public class TimeScript : MonoBehaviour
     [SerializeField] Text _timeText;
     [SerializeField] Text _timemiddleText;
     [SerializeField] Text _timeupText;
+    public Slider slider;
     //ポーズしているかどうか
     private bool isPose = false;
+    float _max = 0;
     
     public void ChangeTimer()
     {
@@ -33,6 +35,7 @@ public class TimeScript : MonoBehaviour
     void Start()
     {
         ChangeTimer();
+        _max = _countdown;
     }
 
     void Update()
@@ -41,7 +44,7 @@ public class TimeScript : MonoBehaviour
         if (isPose)
         {
             //ポーズ中であることを表示
-            _timeText.text = _countdown.ToString("f1");
+            //_timeText.text = _countdown.ToString("f1");
 
             //カウントダウンしない
             return;
@@ -50,26 +53,27 @@ public class TimeScript : MonoBehaviour
         _countdown -= Time.deltaTime;
 
         //時間を表示する
-        _timeText.text = _countdown.ToString("f1");
+        //_timeText.text = _countdown.ToString("f1");
 
         //countdownが以下になったとき
         if (_countdown <= 30 && _countdown >= 28)
         {
-            _timeText.text = _countdown.ToString("f1");
+            //_timeText.text = _countdown.ToString("f1");
             _timemiddleText.text = "残り時間30秒です";
         }
         else if (_countdown < 28 && _countdown > 0)
         {
-            _timeText.text = _countdown.ToString("f1");
+            //_timeText.text = _countdown.ToString("f1");
             _timemiddleText.text = "";
         }
         else if (_countdown <= 0)
         {
-            _timeText.text = "0.0";
+            //_timeText.text = "0.0";
             _timeupText.text = "時間になりました";
             _countdown = 0;
         }
-
+        slider.value = (float)_countdown / (float)_max; ;
+        Debug.Log("slider.value : " + slider.value);
     }
     
 }
