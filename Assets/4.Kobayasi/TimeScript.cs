@@ -65,7 +65,7 @@ public class TimeScript : MonoBehaviour
         }
         else if (_countdown <= 0)
         {
-            _timeText.text = "00.0";
+            _timeText.text = "0.0";
             _timeupText.text = "ŽžŠÔ‚É‚È‚è‚Ü‚µ‚½";
             _countdown = 0;
         }
