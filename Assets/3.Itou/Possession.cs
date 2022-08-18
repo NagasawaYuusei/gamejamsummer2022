@@ -10,26 +10,14 @@ public class Possession : MonoBehaviour
     [SerializeField][Tooltip("RayÇ™ìñÇΩÇ¡ÇΩÇ‡ÇÃÇ…ïœÇÌÇ¡ÇƒÇŸÇµÇ¢êF")] Color _color = new Color(210, 210, 210);
     MeshRenderer _mr;
     RaycastHit hit;
-    [SerializeField]Possessed possessedScript;
-    bool isPossession;
+
     void Update()
     {
         Debug.DrawRay(gameObject.transform.position, Vector3.forward * _rayDistance, Color.blue, 0.1f);
         if (Physics.Raycast(gameObject.transform.position, Vector3.forward, out hit, _rayDistance, _canHitMask))
         {
             _hited = hit.collider.gameObject;
-            possessedScript = _hited.GetComponent<Possessed>();
             ColorChange(_hited, _color);
-            if ((Input.GetKeyDown(KeyCode.Z)) && isPossession == false)
-            {
-                possessedScript.enabled = true;
-                this.gameObject.transform.position = _hited.transform.position;
-                this.transform.rotation = _hited.transform.rotation;
-            }
-            else if ((Input.GetKeyDown(KeyCode.Z)) && isPossession == true)
-            {
-                possessedScript.enabled = false;
-            }
         }
         else if (_hited)
         {
