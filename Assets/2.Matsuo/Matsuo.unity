@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _time: 1
-  _poolsizu: 9
+  _poolsizu: 100
   _prefab:
   - {fileID: 8975045399647935414, guid: 2745553f646337e4cb516d030f3d03a6, type: 3}
   _root: {fileID: 116348685}
@@ -425,7 +425,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: -772751244581216379, guid: 65ee10d0046ad9f499d3b217f89d4e84, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
