@@ -7,9 +7,8 @@ public class Possession : MonoBehaviour
     [SerializeField][Tooltip("プレイヤーが憑依できる物のレイヤー")] private LayerMask _canHitMask;
     [SerializeField][Tooltip("Rayが当たったらこの中に入れる")] GameObject _hited;
     [SerializeField][Tooltip("Rayの距離")] private float _rayDistance;
-    [SerializeField][Tooltip("Rayが当たったものに変わってほしい色")] Color _color=new Color(210,210,210);
+    [SerializeField][Tooltip("Rayが当たったものに変わってほしい色")] Color _color = new Color(210, 210, 210);
     MeshRenderer _mr;
-
     RaycastHit hit;
 
     void Update()
@@ -20,14 +19,17 @@ public class Possession : MonoBehaviour
             _hited = hit.collider.gameObject;
             ColorChange(_hited, _color);
         }
-        else
+        else if (_hited)
         {
-            ColorChange(_hited,Color.white);
+            ColorChange(_hited, Color.white);
             _hited = null;
         }
     }
-    public void ColorChange(GameObject gameObject,Color color)
+
+
+    public void ColorChange(GameObject gameObject, Color color)
     {
         gameObject.GetComponent<MeshRenderer>().material.color = color;
     }
+
 }
