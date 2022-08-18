@@ -1390,7 +1390,6 @@ GameObject:
   - component: {fileID: 6608785497154841798}
   - component: {fileID: 4074475329939483787}
   - component: {fileID: 8975045399647935414}
-  - component: {fileID: 6512596035551746725}
   m_Layer: 0
   m_Name: Muryotaisu
   m_TagString: Player
@@ -1488,22 +1487,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b33237294d49cd942b87db9f7e5c148d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  central: {x: 0, y: 0, z: 0}
-  radius: 3
-  waitTime: 2
-  time: 0
---- !u!114 &6512596035551746725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3232792036779966794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 651f520deaa5a7b47ad8c6c60b11b7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   central: {x: 0, y: 0, z: 0}

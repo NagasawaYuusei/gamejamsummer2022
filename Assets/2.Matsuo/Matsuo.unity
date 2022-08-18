@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _time: 1
-  _poolsizu: 3
+  _poolsizu: 9
   _prefab:
   - {fileID: 8975045399647935414, guid: 2745553f646337e4cb516d030f3d03a6, type: 3}
   _root: {fileID: 116348685}
