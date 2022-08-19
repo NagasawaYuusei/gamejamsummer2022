@@ -43,8 +43,6 @@ public class TimeScript : MonoBehaviour
         //ポーズ中かどうか
         if (isPose)
         {
-            //ポーズ中であることを表示
-            //_timeText.text = _countdown.ToString("f1");
 
             //カウントダウンしない
             return;
@@ -52,8 +50,7 @@ public class TimeScript : MonoBehaviour
         //時間をカウントダウンする
         _countdown -= Time.deltaTime;
 
-        //時間を表示する
-        //_timeText.text = _countdown.ToString("f1");
+      
 
         //countdownが以下になったとき
         if (_countdown <= 30 && _countdown >= 28)
