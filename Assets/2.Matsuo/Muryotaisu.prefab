@@ -1489,8 +1489,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33237294d49cd942b87db9f7e5c148d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  central: {x: 0, y: 0, z: 0}
-  radius: 15
+  central: {x: 3, y: 0, z: 12}
+  radius: 25
   waitTime: 1
   time: 0
 --- !u!1 &3387241405169620232
