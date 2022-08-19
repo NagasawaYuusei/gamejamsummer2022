@@ -11,10 +11,13 @@ public class Possession : MonoBehaviour
     MeshRenderer _mr;
     RaycastHit hit;
 
+    public GameObject Hited => _hited;
+
     void Update()
     {
-        Debug.DrawRay(gameObject.transform.position, Vector3.forward * _rayDistance, Color.blue, 0.1f);
-        if (Physics.Raycast(gameObject.transform.position, Vector3.forward, out hit, _rayDistance, _canHitMask))
+        Vector3 dir = Camera.main.transform.TransformDirection(Vector3.forward);
+        Debug.DrawRay(gameObject.transform.position + new Vector3(0,0.5f,0), dir * _rayDistance, Color.blue, 0.1f);
+        if (Physics.Raycast(gameObject.transform.position + new Vector3(0, 0.5f, 0), dir, out hit, _rayDistance, _canHitMask))
         {
             _hited = hit.collider.gameObject;
             ColorChange(_hited, _color);
