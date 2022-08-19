@@ -128,9 +128,9 @@ public class Enemy : MonoBehaviour, IObjectPool
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player")
         {
             GetDamage();
         }

@@ -16,6 +16,7 @@ public class Fire : MonoBehaviour
         {
             Debug.Log("Fire");
             //アニメーション再生処理
+            _cc.GO.GetComponent<Animator>().SetTrigger("Action");
             _cc.ChangeFPS();
         }
     }
