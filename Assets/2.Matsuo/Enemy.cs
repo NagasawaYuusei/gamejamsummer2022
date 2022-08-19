@@ -107,12 +107,10 @@ public class Enemy : MonoBehaviour, IObjectPool
     }
 
 
-    IEnumerator GetDamage()
+    public void GetDamage()
     {
         Debug.Log("勇者死亡");
         _anim.SetTrigger("Death");
-        yield return 3f;
-        Deth();
     }
 
     public void DisactiveForInstantiate()
@@ -125,7 +123,8 @@ public class Enemy : MonoBehaviour, IObjectPool
         gameObject.SetActive(true);
         _isActrive = true;
     }
-    public void Deth()
+
+    public void Deth()//アニメーションで呼ぶ
     {
         gameObject.SetActive(false);
 
