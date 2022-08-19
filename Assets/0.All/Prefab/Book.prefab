@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7819417724975017793}
   - component: {fileID: 2827118353596307651}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Book
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -112,6 +112,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: book
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6ad075af65e31d341ba7205a8cbe867c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6ad075af65e31d341ba7205a8cbe867c, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ad075af65e31d341ba7205a8cbe867c, type: 3}
 --- !u!1 &6085301955253694897 stripped
@@ -119,19 +127,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6ad075af65e31d341ba7205a8cbe867c, type: 3}
   m_PrefabInstance: {fileID: 6391237010764319968}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &2093524295264578659
-BoxCollider:
+--- !u!135 &4045251698415566761
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6085301955253694897}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.03, y: 0.29, z: 0.21267393}
-  m_Center: {x: 0, y: 0, z: 0.0013369694}
+  m_Radius: 0.21628296
+  m_Center: {x: 0, y: 0, z: 0.009040654}
 --- !u!82 &4172087471620208233
 AudioSource:
   m_ObjectHideFlags: 0
@@ -139,7 +147,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6085301955253694897}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 12f73c8078d7dc544ba9274c069ef3a3, type: 3}

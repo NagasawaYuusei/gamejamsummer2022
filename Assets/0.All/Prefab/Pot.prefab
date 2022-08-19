@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 250694877134428131}
   - component: {fileID: 250694877134428132}
   - component: {fileID: 250694877134428133}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pot
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -83,15 +83,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5d326c83e40d8ea4689fec333a3d1784, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5d326c83e40d8ea4689fec333a3d1784, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.09
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5d326c83e40d8ea4689fec333a3d1784, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.3168393
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5d326c83e40d8ea4689fec333a3d1784, type: 3}
       propertyPath: m_LocalRotation.w
@@ -99,15 +99,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5d326c83e40d8ea4689fec333a3d1784, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5d326c83e40d8ea4689fec333a3d1784, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5d326c83e40d8ea4689fec333a3d1784, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5d326c83e40d8ea4689fec333a3d1784, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -124,6 +124,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5d326c83e40d8ea4689fec333a3d1784, type: 3}
       propertyPath: m_Name
       value: BGMD_Pot
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5d326c83e40d8ea4689fec333a3d1784, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5d326c83e40d8ea4689fec333a3d1784, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d326c83e40d8ea4689fec333a3d1784, type: 3}
@@ -145,12 +153,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133724548661846459}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.097635955
-  m_Height: 0.2757065
+  m_IsTrigger: 1
+  m_Enabled: 0
+  m_Radius: 0.34580716
+  m_Height: 0.69161433
   m_Direction: 1
-  m_Center: {x: 0, y: 0.13785325, z: 0.000000029802322}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &250694876716602826
 AudioSource:
   m_ObjectHideFlags: 0

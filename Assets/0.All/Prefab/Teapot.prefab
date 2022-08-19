@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1279243919225455854}
   - component: {fileID: 1279243919225455855}
   - component: {fileID: 1279243919225455848}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Teapot
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -129,6 +129,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: teapot
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 65bbebb5f9507514eb2c613ee115b975, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 65bbebb5f9507514eb2c613ee115b975, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040542448765327740, guid: 65bbebb5f9507514eb2c613ee115b975, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5994721076960434074, guid: 65bbebb5f9507514eb2c613ee115b975, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65bbebb5f9507514eb2c613ee115b975, type: 3}
 --- !u!4 &1606220377236489257 stripped
@@ -149,11 +165,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090127902348451475}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_IsTrigger: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.22157204, y: 0.22307974, z: 0.12866801}
-  m_Center: {x: 0.004362285, y: 0.10187954, z: 0.0014749765}
+  m_Size: {x: 0.37164098, y: 0.22307974, z: 0.43046585}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &1279243920216497229
 AudioSource:
   m_ObjectHideFlags: 0
@@ -161,7 +177,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090127902348451475}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 28d9113882febb048b7b8376778e25e6, type: 3}
