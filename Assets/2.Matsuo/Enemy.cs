@@ -22,6 +22,17 @@ public class Enemy : MonoBehaviour, IObjectPool
     //待機時間を数える
     [SerializeField] float time = 0;
 
+    /// <summary>
+    /// 長さ
+    /// </summary>
+    [SerializeField] float _range = 5f;
+    /// <summary>
+    /// Layer
+    /// </summary>
+    [SerializeField] LayerMask _layer;
+    [SerializeField] float _damageTime = 1f;
+    float _time;
+
 
     //ObjectPool
     bool _isActrive = false;
@@ -45,6 +56,8 @@ public class Enemy : MonoBehaviour, IObjectPool
 
     void Update()
     {
+        Attack();
+
         //経路探索の準備ができておらず
         //目標地点までの距離が0.5m未満ならNavMeshAgentを止める
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
@@ -63,6 +76,24 @@ public class Enemy : MonoBehaviour, IObjectPool
         }
     }
 
+    void Attack()
+    {
+        Debug.DrawRay(transform.position, transform.forward * _range);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.forward, _range, _layer);
+        if(hit)
+        {
+            _time += Time.deltaTime;
+            if(_time >= _damageTime)
+            {
+                _time = 0;
+                GameManager.Instance.PlayerDamage();
+            }
+            else
+            {
+                _time = 0;
+            }
+        }
+    }
     void GotoNextPoint()
     {
         //NavMeshAgentのストップを解除
@@ -102,7 +133,6 @@ public class Enemy : MonoBehaviour, IObjectPool
         if (collision.gameObject.tag == "Player")
         {
             GetDamage();
-
         }
     }
 
@@ -111,6 +141,7 @@ public class Enemy : MonoBehaviour, IObjectPool
     {
         Debug.Log("勇者死亡");
         _anim.SetTrigger("Death");
+        GameManager.Instance.ScoreUp();
     }
 
     public void DisactiveForInstantiate()
@@ -127,6 +158,5 @@ public class Enemy : MonoBehaviour, IObjectPool
     public void Deth()//アニメーションで呼ぶ
     {
         gameObject.SetActive(false);
-
     }
 }
