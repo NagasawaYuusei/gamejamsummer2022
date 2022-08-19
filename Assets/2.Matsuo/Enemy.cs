@@ -140,6 +140,7 @@ public class Enemy : MonoBehaviour, IObjectPool
     public void GetDamage()
     {
         Debug.Log("—EŽÒŽ€–S");
+        agent.isStopped = true;
         _anim.SetTrigger("Death");
         GameManager.Instance.ScoreUp();
     }
