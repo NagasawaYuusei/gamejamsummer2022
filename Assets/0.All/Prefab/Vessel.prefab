@@ -444,6 +444,7 @@ GameObject:
   - component: {fileID: 2231896999572526103}
   - component: {fileID: 2300304229404462478}
   - component: {fileID: 4972429222906879677}
+  - component: {fileID: -5370579445917459468}
   - component: {fileID: 2456390594920869186}
   m_Layer: 6
   m_Name: Vessel
@@ -503,6 +504,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0.05, z: 0}
+--- !u!114 &-5370579445917459468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8210774168377608369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c1fb9efd6422b49ae3c08e2ca5b87f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2456390594920869186
 MonoBehaviour:
   m_ObjectHideFlags: 0
