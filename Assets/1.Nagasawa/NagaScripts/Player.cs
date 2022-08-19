@@ -41,7 +41,6 @@ public class Player : MonoBehaviour
         State();
         PlayerInput();
         ControlDrag();
-        Jump();
     }
 
     void FixedUpdate()
