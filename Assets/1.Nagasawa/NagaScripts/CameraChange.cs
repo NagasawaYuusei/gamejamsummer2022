@@ -16,6 +16,7 @@ public class CameraChange : MonoBehaviour
     float _inputValueV;
 
     public bool IsTPS => _isTPS;
+    public GameObject GO => _go;
 
     void Start()
     {

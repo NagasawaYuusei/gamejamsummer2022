@@ -24,11 +24,11 @@ public class Possession : MonoBehaviour
                 ChangeNullHited();
                 return;
             }
-            ColorChange(_hited, _color);
+            //ColorChange(_hited, _color);
         }
         else if (_hited)
         {
-            ColorChange(_hited, Color.white);
+            //ColorChange(_hited, Color.white);
             ChangeNullHited();
         }
     }

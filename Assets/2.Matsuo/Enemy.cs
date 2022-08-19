@@ -11,19 +11,19 @@ public class Enemy : MonoBehaviour, IObjectPool
     GameObject player; //
     Animator _anim = default;
 
-    //ˆÊ’u‚ÌŠî€‚É‚È‚éƒIƒuƒWƒFƒNƒg‚ÌTransform‚ğû‚ß‚é
+    //ä½ç½®ã®åŸºæº–ã«ãªã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®Transformã‚’åã‚ã‚‹
     //public Transform central;
     [SerializeField] Vector3 central;
     private NavMeshAgent agent;
-    //ƒ‰ƒ“ƒ_ƒ€‚ÅŒˆ‚ß‚é”’l‚ÌÅ‘å’l
+    //ãƒ©ãƒ³ãƒ€ãƒ ã§æ±ºã‚ã‚‹æ•°å€¤ã®æœ€å¤§å€¤
     [SerializeField] float radius = 3;
-    //İ’è‚µ‚½‘Ò‹@ŠÔ
+    //è¨­å®šã—ãŸå¾…æ©Ÿæ™‚é–“
     [SerializeField] float waitTime = 2;
-    //‘Ò‹@ŠÔ‚ğ”‚¦‚é
+    //å¾…æ©Ÿæ™‚é–“ã‚’æ•°ãˆã‚‹
     [SerializeField] float time = 0;
 
     /// <summary>
-    /// ’·‚³
+    /// é•·ã•
     /// </summary>
     [SerializeField] float _range = 5f;
     /// <summary>
@@ -48,9 +48,9 @@ public class Enemy : MonoBehaviour, IObjectPool
 
     void Start()
     {
-        //–Ú•W’n“_‚É‹ß‚Ã‚¢‚Ä‚à‘¬“x‚ğ—‚Æ‚³‚È‚­‚È‚é
+        //ç›®æ¨™åœ°ç‚¹ã«è¿‘ã¥ã„ã¦ã‚‚é€Ÿåº¦ã‚’è½ã¨ã•ãªããªã‚‹
         agent.autoBraking = false;
-        //–Ú•W’n“_‚ğŒˆ‚ß‚é
+        //ç›®æ¨™åœ°ç‚¹ã‚’æ±ºã‚ã‚‹
         GotoNextPoint();
     }
 
@@ -58,17 +58,17 @@ public class Enemy : MonoBehaviour, IObjectPool
     {
         Attack();
 
-        //Œo˜H’Tõ‚Ì€”õ‚ª‚Å‚«‚Ä‚¨‚ç‚¸
-        //–Ú•W’n“_‚Ü‚Å‚Ì‹——£‚ª0.5m–¢–‚È‚çNavMeshAgent‚ğ~‚ß‚é
+        //çµŒè·¯æ¢ç´¢ã®æº–å‚™ãŒã§ãã¦ãŠã‚‰ãš
+        //ç›®æ¨™åœ°ç‚¹ã¾ã§ã®è·é›¢ãŒ0.5mæœªæº€ãªã‚‰NavMeshAgentã‚’æ­¢ã‚ã‚‹
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
             StopHere();
-        //NavMeshAgent‚ÌƒXƒs[ƒh‚Ì2æ‚ÅƒAƒjƒ[ƒVƒ‡ƒ“‚ğØ‚è‘Ö‚¦‚é
+        //NavMeshAgentã®ã‚¹ãƒ”ãƒ¼ãƒ‰ã®2ä¹—ã§ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹
         //_anim.SetFloat("Blend", agent.velocity.sqrMagnitude);
     }
 
     void LateUpdate()
     {
-        // ƒAƒjƒ[ƒVƒ‡ƒ“‚Ìˆ—
+        // ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã®å‡¦ç†
         if (_anim)
         {
             _anim.SetFloat("Speed", agent.velocity.magnitude);
@@ -96,41 +96,41 @@ public class Enemy : MonoBehaviour, IObjectPool
     }
     void GotoNextPoint()
     {
-        //NavMeshAgent‚ÌƒXƒgƒbƒv‚ğ‰ğœ
+        //NavMeshAgentã®ã‚¹ãƒˆãƒƒãƒ—ã‚’è§£é™¤
         agent.isStopped = false;
 
-        //–Ú•W’n“_‚ÌX²AZ²‚ğƒ‰ƒ“ƒ_ƒ€‚ÅŒˆ‚ß‚é
+        //ç›®æ¨™åœ°ç‚¹ã®Xè»¸ã€Zè»¸ã‚’ãƒ©ãƒ³ãƒ€ãƒ ã§æ±ºã‚ã‚‹
         float posX = Random.Range(-1 * radius, radius);
         float posZ = Random.Range(-1 * radius, radius);
 
-        //CentralPoint‚ÌˆÊ’u‚ÉPosX‚ÆPosZ‚ğ‘«‚·
+        //CentralPointã®ä½ç½®ã«PosXã¨PosZã‚’è¶³ã™
         Vector3 pos = central;
         pos.x += posX;
         pos.z += posZ;
 
-        //NavMeshAgent‚É–Ú•W’n“_‚ğİ’è‚·‚é
+        //NavMeshAgentã«ç›®æ¨™åœ°ç‚¹ã‚’è¨­å®šã™ã‚‹
         agent.destination = pos;
     }
 
     void StopHere()
     {
-        //NavMeshAgent‚ğ~‚ß‚é
+        //NavMeshAgentã‚’æ­¢ã‚ã‚‹
         agent.isStopped = true;
-        //‘Ò‚¿ŠÔ‚ğ”‚¦‚é
+        //å¾…ã¡æ™‚é–“ã‚’æ•°ãˆã‚‹
         time += Time.deltaTime;
 
-        //‘Ò‚¿ŠÔ‚ªİ’è‚³‚ê‚½”’l‚ğ’´‚¦‚é‚Æ”­“®
+        //å¾…ã¡æ™‚é–“ãŒè¨­å®šã•ã‚ŒãŸæ•°å€¤ã‚’è¶…ãˆã‚‹ã¨ç™ºå‹•
         if (time > waitTime)
         {
-            //–Ú•W’n“_‚ğİ’è‚µ’¼‚·
+            //ç›®æ¨™åœ°ç‚¹ã‚’è¨­å®šã—ç›´ã™
             GotoNextPoint();
             time = 0;
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.tag == "Weapon")
+
         {
             GetDamage();
         }
@@ -139,7 +139,7 @@ public class Enemy : MonoBehaviour, IObjectPool
 
     public void GetDamage()
     {
-        Debug.Log("—EÒ€–S");
+        Debug.Log("å‹‡è€…æ­»äº¡");
         agent.isStopped = true;
         _anim.SetTrigger("Death");
         GameManager.Instance.ScoreUp();
@@ -156,7 +156,7 @@ public class Enemy : MonoBehaviour, IObjectPool
         _isActrive = true;
     }
 
-    public void Deth()//ƒAƒjƒ[ƒVƒ‡ƒ“‚ÅŒÄ‚Ô
+    public void Deth()//ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã§å‘¼ã¶
     {
         gameObject.SetActive(false);
         _isActrive = false;
