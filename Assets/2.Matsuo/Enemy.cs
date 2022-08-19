@@ -63,7 +63,7 @@ public class Enemy : MonoBehaviour, IObjectPool
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
             StopHere();
         //NavMeshAgentのスピードの2乗でアニメーションを切り替える
-        _anim.SetFloat("Blend", agent.velocity.sqrMagnitude);
+        //_anim.SetFloat("Blend", agent.velocity.sqrMagnitude);
     }
 
     void LateUpdate()
@@ -130,7 +130,7 @@ public class Enemy : MonoBehaviour, IObjectPool
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Weapon")
         {
             GetDamage();
         }
@@ -159,5 +159,6 @@ public class Enemy : MonoBehaviour, IObjectPool
     public void Deth()//アニメーションで呼ぶ
     {
         gameObject.SetActive(false);
+        _isActrive = false;
     }
 }
