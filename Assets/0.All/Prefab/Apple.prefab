@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4914227921611736615}
   - component: {fileID: 2079119913117158829}
   - component: {fileID: 5217462491158055210}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Apple
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2013505148574696497}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 391809440614582978}
@@ -81,11 +81,11 @@ GameObject:
   - component: {fileID: 391809440614582978}
   - component: {fileID: 8952217894941586914}
   - component: {fileID: 6994918282659748836}
-  - component: {fileID: 1702899259175453353}
   - component: {fileID: 7025979749517206132}
-  m_Layer: 0
+  - component: {fileID: 8658821927452426128}
+  m_Layer: 6
   m_Name: Apple
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,19 +155,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1702899259175453353
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5102766057357926563}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0623372, y: 0.06719081, z: 0.0623372}
-  m_Center: {x: 0, y: 0.03359539, z: 0}
 --- !u!82 &7025979749517206132
 AudioSource:
   m_ObjectHideFlags: 0
@@ -175,7 +162,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5102766057357926563}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7bb624b60af42074ba9f16b87757de18, type: 3}
@@ -264,3 +251,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!135 &8658821927452426128
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102766057357926563}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.19
+  m_Center: {x: 0, y: 0.03359539, z: 0}

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4727493341296732984}
   - component: {fileID: 4727493341296732991}
   - component: {fileID: 2848257623903588941}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Chair
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,11 +93,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4727493341296732990}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_IsTrigger: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.36162746, y: 0.6985287, z: 0.32810664}
-  m_Center: {x: 0, y: 0.34926435, z: -0.0052766725}
+  m_Size: {x: 1.060228, y: 0.6985287, z: 1.1062603}
+  m_Center: {x: -0.09087922, y: 0.34926435, z: -0.04873061}
 --- !u!82 &2848257623903588941
 AudioSource:
   m_ObjectHideFlags: 0
@@ -105,7 +105,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4727493341296732990}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a3f16d7b9f2573a49a4bd43f5cc82214, type: 3}
@@ -204,7 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4727493342028765130}
   - component: {fileID: 4727493342028765129}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Chair
   m_TagString: Weapon
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7357933793860356066}
   - component: {fileID: 7357933793860356065}
   - component: {fileID: 7357933793860356064}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Candle
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -125,6 +125,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BGMD_Candle
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d3fa5d843c74ab04fa88754dbc3f53eb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d3fa5d843c74ab04fa88754dbc3f53eb, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3fa5d843c74ab04fa88754dbc3f53eb, type: 3}
 --- !u!4 &7031835012486432041 stripped
@@ -145,10 +153,10 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7700530963089514387}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.13130218
-  m_Height: 0.34850857
+  m_IsTrigger: 1
+  m_Enabled: 0
+  m_Radius: 0.24992557
+  m_Height: 0.49985114
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &7357933794837303422
@@ -158,7 +166,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7700530963089514387}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8f62a5ee2f1731942a75d982f452aec4, type: 3}
