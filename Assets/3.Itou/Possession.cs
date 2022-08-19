@@ -8,7 +8,6 @@ public class Possession : MonoBehaviour
     [SerializeField][Tooltip("Ray‚ª“–‚½‚Á‚½‚ç‚±‚Ì’†‚É“ü‚ê‚é")] GameObject _hited;
     [SerializeField][Tooltip("Ray‚Ì‹——£")] private float _rayDistance;
     [SerializeField][Tooltip("Ray‚ª“–‚½‚Á‚½‚à‚Ì‚É•Ï‚í‚Á‚Ä‚Ù‚µ‚¢F")] Color _color = new Color(210, 210, 210);
-    MeshRenderer _mr;
     RaycastHit hit;
 
     public GameObject Hited => _hited;
@@ -20,15 +19,24 @@ public class Possession : MonoBehaviour
         if (Physics.Raycast(gameObject.transform.position + new Vector3(0, 0.5f, 0), dir, out hit, _rayDistance, _canHitMask))
         {
             _hited = hit.collider.gameObject;
+            if (_hited.GetComponent<PossessedSlider>().IsActive)
+            {
+                ChangeNullHited();
+                return;
+            }
             ColorChange(_hited, _color);
         }
         else if (_hited)
         {
             ColorChange(_hited, Color.white);
-            _hited = null;
+            ChangeNullHited();
         }
     }
 
+    public void ChangeNullHited()
+    {
+        _hited = null;
+    }
 
     public void ColorChange(GameObject gameObject, Color color)
     {
