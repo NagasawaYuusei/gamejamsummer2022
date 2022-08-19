@@ -12,7 +12,6 @@ public class EnemyNavMesh: MonoBehaviour
     //位置の基準になるオブジェクトのTransformを収める
     //public Transform central;
     [SerializeField] Vector3 central;
-
     private NavMeshAgent agent;
     //ランダムで決める数値の最大値
     [SerializeField] float radius = 3;
@@ -78,6 +77,6 @@ public class EnemyNavMesh: MonoBehaviour
             StopHere();
 
         //NavMeshAgentのスピードの2乗でアニメーションを切り替える
-        //anim.SetFloat("Blend", agent.velocity.sqrMagnitude);
+        anim.SetFloat("Blend", agent.velocity.sqrMagnitude);
     }
 }

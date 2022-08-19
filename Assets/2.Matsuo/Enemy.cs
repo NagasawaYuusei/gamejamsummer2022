@@ -99,15 +99,19 @@ public class Enemy : MonoBehaviour, IObjectPool
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.tag == "Player")
+        {
+            GetDamage();
 
+        }
     }
 
 
-    public void GetDamage(int damage)
+    IEnumerator GetDamage()
     {
-        Debug.Log(damage + " ダメージを受けてプレイヤーのHPが になった！");
+        Debug.Log("勇者死亡");
         _anim.SetTrigger("Death");
-
+        yield return 3f;
         Deth();
     }
 
